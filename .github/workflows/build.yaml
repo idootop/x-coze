@@ -1,0 +1,57 @@
+name: Build and Release
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: yarn install and build
+        run: |
+          yarn install
+          yarn zip
+
+      - name: Get verison from tag
+        id: tag_version
+        run: |
+          REFS_TAGS_STRIPPED=${{ github.ref }} # e.g. 'refs/tags/v1.0.0'
+          VERSION=${REFS_TAGS_STRIPPED/refs\/tags\//} # 'v1.0.0'
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Get version from package.json
+        id: packagejson
+        run: |
+          echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.tag_version.outputs.version }}
+          release_name: Release ${{ steps.tag_version.outputs.version }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: .output/x-coze-${{ steps.packagejson.outputs.version }}-chrome.zip
+          asset_name: x-coze-${{ steps.packagejson.outputs.version }}-chrome.zip
+          asset_content_type: application/zip
