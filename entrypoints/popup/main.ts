@@ -37,7 +37,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       </label>
     </div>
     <p class="read-the-docs">
-      Made with ❤️ by <a href="https://del.wang" target="_blank"> Del.Wang </a>
+      Made with ❤️ by <a href="https://github.com/idootop/x-coze" target="_blank"> Del.Wang </a>
     </p>
   </div>
 `;
