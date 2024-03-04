@@ -1,0 +1,22 @@
+{
+  "name": "x-coze",
+  "description": "帮你一键美化 Coze，让 Bot 调试更丝滑。",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "postinstall": "wxt prepare"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "webext-bridge": "^6.0.1",
+    "wxt": "^0.16.0"
+  }
+}

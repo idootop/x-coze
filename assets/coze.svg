@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none" viewBox="0 0 64 64">
+    <g clip-path="url(#brand-en-black-row_svg__a)">
+        <path fill="#4D53E8" d="M55.936 0H8.064A8.064 8.064 0 0 0 0 8.064v47.872A8.064 8.064 0 0 0 8.064 64h47.872A8.064 8.064 0 0 0 64 55.936V8.064A8.064 8.064 0 0 0 55.936 0Z"></path>
+        <path fill="#fff" fill-rule="evenodd" d="M32.265 10.08c-9.252 0-16.754 7.501-16.754 16.764v7.024h-4.02c-4.616 0-5.667 6.483-1.274 7.926l5.294 1.76v3.035c0 3.003 3.162 4.955 5.836 3.608l2.939-1.464a.254.254 0 0 1 .35.148c2.377 7.427 12.891 7.427 15.268 0 .042-.148.212-.212.35-.148l2.94 1.464c2.683 1.337 5.835-.605 5.835-3.608v-3.034l5.294-1.761c4.382-1.454 3.342-7.926-1.273-7.926h-4.021v-7.024c0-9.252-7.502-16.764-16.754-16.764h-.01Z" clip-rule="evenodd"></path>
+        <path fill="url(#brand-en-black-row_svg__b)" d="M37.941 35.49c0-.89.722-1.623 1.624-1.623.902 0 1.623.722 1.623 1.624 0 .901-.721 1.623-1.623 1.623a1.617 1.617 0 0 1-1.624-1.623Z"></path>
+        <path fill="url(#brand-en-black-row_svg__c)" d="M27.108 41.465a1.614 1.614 0 0 1 0-2.292 1.614 1.614 0 0 1 2.292 0 4.054 4.054 0 0 0 5.73 0 1.614 1.614 0 0 1 2.291 0 1.614 1.614 0 0 1 0 2.291 7.28 7.28 0 0 1-10.313 0Z"></path>
+        <path fill="url(#brand-en-black-row_svg__d)" d="M24.977 32.255c-.891 0-1.623.721-1.623 1.623v3.247c0 .891.721 1.623 1.623 1.623s1.623-.721 1.623-1.623v-3.247c0-.891-.721-1.623-1.623-1.623Z"></path>
+    </g>
+    <defs>
+        <linearGradient id="brand-en-black-row_svg__b" x1="39.597" x2="39.342" y1="34.408" y2="44.796" gradientUnits="userSpaceOnUse"><stop stop-color="#272DCC"></stop><stop offset="1" stop-color="#9A9DF2"></stop></linearGradient>
+        <linearGradient id="brand-en-black-row_svg__c" x1="32.244" x2="31.172" y1="40.404" y2="44.404" gradientUnits="userSpaceOnUse"><stop stop-color="#2B33E6"></stop><stop offset="1" stop-color="#A19AF2"></stop></linearGradient>
+        <linearGradient id="brand-en-black-row_svg__d" x1="25.083" x2="24.064" y1="33.327" y2="54.08" gradientUnits="userSpaceOnUse"><stop stop-color="#272DCC"></stop><stop offset="1" stop-color="#9A9DF2"></stop></linearGradient>
+        <clipPath id="brand-en-black-row_svg__a"><path fill="#fff" d="M0 0h196v64H0z"></path></clipPath>
+    </defs>
+</svg>
