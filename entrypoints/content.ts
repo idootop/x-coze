@@ -42,7 +42,10 @@ const shouldFreeCozeNow = async () => {
   const regex = /space\/(\d+)\/bot\/(\d+)/;
   const isCozeBotPage = url.match(regex);
   let container = document.querySelector(".sidesheet-container");
-  const isExpectLayout = container.children.length === 3;
+  if (!container) {
+    return false;
+  }
+  const isExpectLayout = container?.children?.length === 3;
   const initialized =
     isExpectLayout && container.children[1].style.position === "fixed";
   if (isCozeBotPage && !initialized) {
@@ -56,17 +59,21 @@ const freeCoze = async () => {
   }
   hideElements();
   replaceTitle();
-  let container = document.querySelector(".sidesheet-container");
   document.documentElement.style.width = "100%";
   document.body.style.width = "100%";
   document.documentElement.style.minWidth = "100%";
   document.body.style.minWidth = "100%";
+  let container = document.querySelector(".sidesheet-container");
+  if (!container) {
+    return false;
+  }
   container.children[0].style.display = "none";
   container.children[1].style.position = "fixed";
   container.children[1].style.zIndex = 1;
   container.children[1].style.left = "50%";
   container.children[1].style.height = "auto";
   container.children[1].style.transform = "translateX(-50%)";
+  container.children[1].style.background = "transparent";
   container.children[1].children[0].style.height = "52px";
   container.children[1].children[0].children[1].style.width = "auto";
   container.children[1].children[0].style.borderBottom = "none";
