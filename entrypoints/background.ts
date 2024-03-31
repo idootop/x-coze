@@ -1,4 +1,5 @@
 import { onMessage } from "webext-bridge/background";
+import { storage } from "wxt/storage";
 
 export const getCurrentTab = async () => {
   const tabs = await browser.tabs
@@ -11,13 +12,16 @@ export const getCurrentTab = async () => {
 };
 
 export default defineBackground(() => {
-  let shouldFreeCoze = false;
   onMessage("toggleShouldFreeCoze", async () => {
-    shouldFreeCoze = !shouldFreeCoze;
-    console.log("shouldFreeCoze", shouldFreeCoze);
-    return shouldFreeCoze;
+    const shouldFreeCoze = await storage.getItem("local:shouldFreeCoze", {
+      defaultValue: false,
+    });
+    await storage.setItem("local:shouldFreeCoze", !shouldFreeCoze);
+    return !shouldFreeCoze;
   });
   onMessage("shouldFreeCoze", async () => {
-    return shouldFreeCoze;
+    return await storage.getItem("local:shouldFreeCoze", {
+      defaultValue: false,
+    });
   });
 });
