@@ -2,7 +2,7 @@
   "name": "x-coze",
   "description": "帮你一键美化 Coze，让 Bot 调试更丝滑。",
   "private": true,
-  "version": "2.0.0",
+  "version": "2.1.0",
   "type": "module",
   "scripts": {
     "dev": "wxt",
